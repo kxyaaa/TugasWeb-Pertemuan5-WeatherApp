@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Glassmorphism Effect */
+.glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border-radius: 50%;
+    border: none;
+    background: #ff7e5f;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.search-box button:hover {
+    background: #feb47b;
+    transform: scale(1.05);
+}
+
+/* History Chips */
+.history-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.history-chip {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.history-chip:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* State Messages (Loading & Error) */
+.state-msg {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.error {
+    background: rgba(255, 76, 76, 0.2);
+    border: 1px solid #ff4c4c;
+    border-radius: 10px;
+    color: #ffd1d1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Weather Main */
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.unit-toggle {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.unit-toggle.active {
+    opacity: 1;
+    font-weight: bold;
+    color: #ff7e5f;
+}
+
+.temp-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.temp-box img {
+    width: 100px;
+}
+
+.temp-box h1 {
+    font-size: 4rem;
+}
+
+.desc {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+/* Forecast 5 Days */
+.forecast-section h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 5px;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    overflow-x: auto; /* Untuk layar kecil */
+    padding-bottom: 10px;
+}
+
+.forecast-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 80px;
+    flex: 1;
+}
+
+.forecast-card img {
+    width: 50px;
+}
+
+.forecast-card p {
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .temp-box h1 { font-size: 3rem; }
+    .details { flex-direction: column; gap: 10px; text-align: center; }
+}

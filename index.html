@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Tugas Rutin 5</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome untuk Icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1><i class="fas fa-cloud-sun-rain"></i> Weather App</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Masukkan nama kota...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <!-- Fitur Bonus: Riwayat Pencarian -->
+            <div class="history-container" id="history-container"></div>
+        </header>
+
+        <main>
+            <!-- Loading State -->
+            <div id="loading" class="hidden state-msg">
+                <div class="spinner"></div>
+                <p>Mencari data cuaca...</p>
+            </div>
+
+            <!-- Error Handling -->
+            <div id="error-message" class="hidden state-msg error"></div>
+
+            <!-- Hasil Cuaca -->
+            <div id="weather-result" class="hidden">
+                <div class="weather-main">
+                    <div class="header-info">
+                        <h2 id="city-name">Kota</h2>
+                        <!-- Fitur Bonus: Toggle C/F -->
+                        <div class="toggle-container">
+                            <span id="unit-c" class="active unit-toggle">°C</span> | 
+                            <span id="unit-f" class="unit-toggle">°F</span>
+                        </div>
+                    </div>
+                    
+                    <div class="temp-box">
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <h1 id="temperature">--</h1>
+                    </div>
+                    
+                    <p id="description" class="desc">--</p>
+                    
+                    <div class="details">
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <span>Kelembapan: <strong id="humidity">--%</strong></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <span>Angin: <strong id="wind">--</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fitur Bonus: Forecast 5 Hari -->
+                <div class="forecast-section">
+                    <h3>Forecast 5 Hari Kedepan</h3>
+                    <div id="forecast-container" class="forecast-container">
+                        <!-- Card di-generate via JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
